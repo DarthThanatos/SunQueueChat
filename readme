@@ -1,0 +1,10 @@
+¯eby œci¹gn¹æ kolejkê, wejdŸcie na: http://www.oracle.com/technetwork/java/javaee/downloads/java-archive-downloads-glassfish-419424.html
+I œci¹gnijcie mq4_3-installer-WINNT.zip(jeœli pracujecie na Windowsie). Rozpakujcie, zainstalujcie (najlepiej jako folder docelowy podajcie pulpit, bo 
+trzeba bêdzie czêsto do niego wchodziæ)
+WejdŸcie do mq/bin i otwórzcie tam konsolê. Wpiszcie imqbrokerd.exe - dziêki temu odpali siê broker.
+Nastêpnie stwórzcie folder C:\imq_admin_objects.
+Nastêpnie, bêd¹c w mq/bin wpiszcie: 
+imqobjmgr.exe add -t cf -l "MyConnectionFactory" -j java.naming.factory.initial=com.sun.jndi.fscontext.RefFSContextFactory -j java.naming.provider.url=file:///C:/imq_admin_objects
+Je¿eli piszecie w Eclipsie, to rozwiñcie project navigatora, kliknijcie PPM na ikonkê projektu -> build path -> configure build path; w zak³adce 
+Java Build Path wejdŸcie na libraries -> add external jars. W okienku zaznaczcie dla wygody wszystkie jary, które s¹ w folderze mq/lib 
+Najpierw odpalcie server.class, a potem App.class i zobaczycie co do tej pory natworzy³em.
